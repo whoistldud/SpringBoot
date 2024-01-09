@@ -1,0 +1,34 @@
+{{>layouts/header}}
+
+<form class="container" action="/articles/update" method="post">
+    <input name="id" type="hidden" value="{{id}}"> <!-- id가 몇 번인 article을 수정하는지 알려줘야 하기 때문에 -->
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+        <input name="title" type="text" class="form-control" value="{{article.title}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea name="content" class="form-control" rows="3">{{article.content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles/{{article.id}}">Back</a> <!-- 글 상세페이지로 돌아갈 수 있는 링크 -->
+</form>
+
+{{>layouts/footer}}
+
+<!--
+{{#article}}
+    <form class="container" action="" method="post">
+        <div class="mb-3">
+            <label class="form-label">제목</label>
+            <input name="title" type="text" class="form-control" value="{{title}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">내용</label>
+            <textarea name="content" class="form-control" rows="3">{{content}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/articles/{{id}}">Back</a>  글 상세페이지로 돌아갈 수 있는 링크
+    </form>
+{{/article}}
+-->
